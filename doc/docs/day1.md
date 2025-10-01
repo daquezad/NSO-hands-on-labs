@@ -22,9 +22,8 @@ nso-6.5-freetrial.container-image-prod.linux.x86_64.signed.bin
 nso-6.5-freetrial.linux.x86_64.signed.bin
 ```
 
-
-> **Note on Extraction:**
-> To extract the installer, first **create a `work` directory**. Then, run `bash ../nso-6.5-freetrial.linux.x86_64.signed.bin --skip-verification`. The `--skip-verification` flag is used to bypass the certification check.
+!!! Note
+	To extract the installer, first **create a `work` directory**. Then, run `bash ../nso-6.5-freetrial.linux.x86_64.signed.bin --skip-verification`. The `--skip-verification` flag is used to bypass the certification check.
 
 ```bash
 cisco@xrd-host:~/NSO-6.5-free$ mkdir work
@@ -56,8 +55,8 @@ nso-6.5-freetrial.container-image-prod.linux.x86_64.signed.bin
 nso-6.5-freetrial.linux.x86_64.signed.bin
 ```
 
-> **Note:**
-> First, you need to extract installer `“.bin”` file. To avoid messing up the directory, create a new directory named “work” and execute `“bash ../nso-6.5-freetrial.linux.x86_64.signed.bin”`. Using `“--skip-verification”` skips certification check.
+!!! Note
+	First, you need to extract installer `“.bin”` file. To avoid messing up the directory, create a new directory named “work” and execute `“bash ../nso-6.5-freetrial.linux.x86_64.signed.bin”`. Using `“--skip-verification”` skips certification check.
 
 ```bash
 cisco@xrd-host:~/NSO-6.5-free$ mkdir work
@@ -108,8 +107,8 @@ cisco@xrd-host:~/NSO-INSTALL/nso-instance$ ls
 README.ncs  logs  ncs-cdb  ncs.conf  packages  scripts  state
 ```
 
-> **Note on Extraction:**
-> From NSO 6.5, WebUI and RESTCONF are allowed only to NSO server’s hostname (such as “*localhost*”). To allow an access via IP address, following line has to be added to ncs.conf. Add `<server-alias>198.18.134.27</server-alias>` to line 330 and save the file.
+!!! Note
+	From NSO 6.5, WebUI and RESTCONF are allowed only to NSO server’s hostname (such as “*localhost*”). To allow an access via IP address, following line has to be added to ncs.conf. Add `<server-alias>198.18.134.27</server-alias>` to line 330 and save the file.
 
 
 Once added, start NSO by executing `ncs` command.
@@ -194,8 +193,8 @@ Go back to NSO and click on Devices and you see two XRd routers there.
 
 The first thing you need to do after a device to NSO is execute the “`sync-from`” so you update NSO CDB with the device configuration. Select all devices and make a `sync-from`
 
-> Note 
-> If `sync-from` failed, please do “`fetch ssh host keys`” and try again.
+!!! Note
+	If `sync-from` failed, please do “`fetch ssh host keys`” and try again.
 
 ## 1.3 - Configure Devices using NSO
 
@@ -366,8 +365,8 @@ domain name-server 2.2.2.2
 RP/0/RP0/CPU0:xr-1#
 ```
 
->Note: 
->NTP configuration is not supported on XRd. Need a different scenario! 
+!!! Note
+	NTP configuration is not supported on XRd. Need a different scenario! 
 
 ## 1.7 - Create a Simple NSO Service
 
