@@ -1,0 +1,1246 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lab Overview">
+      
+      
+        <meta name="author" content="David Quezada & Jorge Mira">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Day 1 - NSO Hands-on Lab  .ı|ı.ı|ı.</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1%207.775V2.75C1%201.784%201.784%201%202.75%201h5.025c.464%200%20.91.184%201.238.513l6.25%206.25a1.75%201.75%200%200%201%200%202.474l-5.026%205.026a1.75%201.75%200%200%201-2.474%200l-6.25-6.25A1.75%201.75%200%200%201%201%207.775m1.5%200c0%20.066.026.13.073.177l6.25%206.25a.25.25%200%200%200%20.354%200l5.025-5.025a.25.25%200%200%200%200-.354l-6.25-6.25a.25.25%200%200%200-.177-.073H2.75a.25.25%200%200%200-.25.25ZM6%205a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.5%201.75v11.5c0%20.138.112.25.25.25h3.17a.75.75%200%200%201%200%201.5H2.75A1.75%201.75%200%200%201%201%2013.25V1.75C1%20.784%201.784%200%202.75%200h8.5C12.216%200%2013%20.784%2013%201.75v7.736a.75.75%200%200%201-1.5%200V1.75a.25.25%200%200%200-.25-.25h-8.5a.25.25%200%200%200-.25.25m13.274%209.537zl-4.557%204.45a.75.75%200%200%201-1.055-.008l-1.943-1.95a.75.75%200%200%201%201.062-1.058l1.419%201.425%204.026-3.932a.75.75%200%201%201%201.048%201.074M4.75%204h4.5a.75.75%200%200%201%200%201.5h-4.5a.75.75%200%200%201%200-1.5M4%207.75A.75.75%200%200%201%204.75%207h2a.75.75%200%200%201%200%201.5h-2A.75.75%200%200%201%204%207.75%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.5%207.75A.75.75%200%200%201%207.25%207h1a.75.75%200%200%201%20.75.75v2.75h.25a.75.75%200%200%201%200%201.5h-2a.75.75%200%200%201%200-1.5h.25v-2h-.25a.75.75%200%200%201-.75-.75M8%206a1%201%200%201%201%200-2%201%201%200%200%201%200%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M3.499.75a.75.75%200%200%201%201.5%200v.996C5.9%202.903%206.793%203.65%207.662%204.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873%2010.794-.045%2012.622.26%2014.408.558%2016%201.94%2016%204.25c0%201.278-.954%202.575-2.44%202.734l.146.508.065.22c.203.701.412%201.455.476%202.226.142%201.707-.4%203.03-1.487%203.898C11.714%2014.671%2010.27%2015%208.75%2015h-6a.75.75%200%200%201%200-1.5h1.376a4.5%204.5%200%200%201-.563-1.191%203.84%203.84%200%200%201-.05-2.063%204.65%204.65%200%200%201-2.025-.293.75.75%200%200%201%20.525-1.406c1.357.507%202.376-.006%202.698-.318l.009-.01a.747.747%200%200%201%201.06%200%20.75.75%200%200%201-.012%201.074c-.912.92-.992%201.835-.768%202.586.221.74.745%201.337%201.196%201.621H8.75c1.343%200%202.398-.296%203.074-.836.635-.507%201.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4%202.4%200%200%201-.507-.441%203.1%203.1%200%200%201-.633-1.248.75.75%200%200%201%201.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738%200%201.25-.615%201.25-1.25%200-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706%201.345-.46.92-.27%201.774.019%203.062l.042.19.01.05c.348.443.666.949.94%201.553a.75.75%200%201%201-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7%205.527c-.814-.68-1.75-1.462-2.692-2.619a3.7%203.7%200%200%200-1.023.88c-.406.495-.663%201.036-.722%201.508.116.122.306.21.591.239.388.038.797-.06%201.032-.19a.75.75%200%200%201%20.728%201.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75%205.677V5.5c0-.984.48-1.94%201.077-2.664.46-.559%201.05-1.055%201.673-1.353z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13.78%204.22a.75.75%200%200%201%200%201.06l-7.25%207.25a.75.75%200%200%201-1.06%200L2.22%209.28a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018L6%2010.94l6.72-6.72a.75.75%200%200%201%201.06%200%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.92%206.085h.001a.749.749%200%201%201-1.342-.67c.169-.339.436-.701.849-.977C6.845%204.16%207.369%204%208%204a2.76%202.76%200%200%201%201.637.525c.503.377.863.965.863%201.725%200%20.448-.115.83-.329%201.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6%206%200%200%200-.26.16%201%201%200%200%200-.276.245.75.75%200%200%201-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1%201%200%200%200%20.277-.245C8.96%206.514%209%206.427%209%206.25a.61.61%200%200%200-.262-.525A1.27%201.27%200%200%200%208%205.5c-.369%200-.595.09-.74.187a1%201%200%200%200-.34.398M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.344%202.343za8%208%200%200%201%2011.314%2011.314A8.002%208.002%200%200%201%20.234%2010.089a8%208%200%200%201%202.11-7.746m1.06%2010.253a6.5%206.5%200%201%200%209.108-9.275%206.5%206.5%200%200%200-9.108%209.275M6.03%204.97%208%206.94l1.97-1.97a.749.749%200%200%201%201.275.326.75.75%200%200%201-.215.734L9.06%208l1.97%201.97a.749.749%200%200%201-.326%201.275.75.75%200%200%201-.734-.215L8%209.06l-1.97%201.97a.749.749%200%200%201-1.275-.326.75.75%200%200%201%20.215-.734L6.94%208%204.97%206.03a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4.72.22a.75.75%200%200%201%201.06%200l1%20.999a3.5%203.5%200%200%201%202.441%200l.999-1a.748.748%200%200%201%201.265.332.75.75%200%200%201-.205.729l-.775.776c.616.63.995%201.493.995%202.444v.327q0%20.15-.025.292c.408.14.764.392%201.029.722l1.968-.787a.75.75%200%200%201%20.556%201.392L13%207.258V9h2.25a.75.75%200%200%201%200%201.5H13v.5q-.002.615-.141%201.186l2.17.868a.75.75%200%200%201-.557%201.392l-2.184-.873A5%205%200%200%201%208%2016a5%205%200%200%201-4.288-2.427l-2.183.873a.75.75%200%200%201-.558-1.392l2.17-.868A5%205%200%200%201%203%2011v-.5H.75a.75.75%200%200%201%200-1.5H3V7.258L.971%206.446a.75.75%200%200%201%20.558-1.392l1.967.787c.265-.33.62-.583%201.03-.722a1.7%201.7%200%200%201-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72%201.28a.75.75%200%200%201%200-1.06m.53%206.28a.75.75%200%200%200-.75.75V11a3.5%203.5%200%201%200%207%200V7.25a.75.75%200%200%200-.75-.75ZM6.173%205h3.654A.17.17%200%200%200%2010%204.827V4.5a2%202%200%201%200-4%200v.327c0%20.096.077.173.173.173%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5%205.782V2.5h-.25a.75.75%200%200%201%200-1.5h6.5a.75.75%200%200%201%200%201.5H11v3.282l3.666%205.76C15.619%2013.04%2014.543%2015%2012.767%2015H3.233c-1.776%200-2.852-1.96-1.899-3.458Zm-2.4%206.565a.75.75%200%200%200%20.633%201.153h9.534a.75.75%200%200%200%20.633-1.153L12.225%2010.5h-8.45ZM9.5%202.5h-3V6c0%20.143-.04.283-.117.403L4.73%209h6.54L9.617%206.403A.75.75%200%200%201%209.5%206Z%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1.75%202.5h10.5a.75.75%200%200%201%200%201.5H1.75a.75.75%200%200%201%200-1.5m4%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5m0%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5M2.5%207.75v6a.75.75%200%200%201-1.5%200v-6a.75.75%200%200%201%201.5%200%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#day-1-instructions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="NSO Hands-on Lab  .ı|ı.ı|ı." class="md-header__button md-logo" aria-label="NSO Hands-on Lab  .ı|ı.ı|ı." data-md-component="logo">
+      
+  <img src="../media/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSO Hands-on Lab  .ı|ı.ı|ı.
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Day 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Day 1
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="NSO Hands-on Lab  .ı|ı.ı|ı." class="md-nav__button md-logo" aria-label="NSO Hands-on Lab  .ı|ı.ı|ı." data-md-component="logo">
+      
+  <img src="../media/logo.png" alt="logo">
+
+    </a>
+    NSO Hands-on Lab  .ı|ı.ı|ı.
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Day 1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Day 1
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#10-connect-to-the-workstation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.0 Connect to the Workstation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-install-nso-and-neds" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Install NSO and NEDs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-install-nso-and-neds_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 - Install NSO and NEDs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-registering-xrd-routers" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 – Registering XRd routers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-configure-devices-using-nso" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 - Configure Devices using NSO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-use-rollbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 - Use Rollback’s
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-use-nso-capabilities-to-detect-out-of-band-device-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 - Use NSO capabilities to detect Out-of-Band device configurations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-create-device-groups-and-device-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 - Create Device Groups and Device Templates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-create-a-simple-nso-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 - Create a Simple NSO Service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-create-role-based-and-resource-based-access-control-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8 - Create Role Based and Resource Based Access Control rules
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="day-1-instructions">Day 1 instructions</h1>
+<h2 id="10-connect-to-the-workstation">1.0 Connect to the Workstation</h2>
+<p>Please click on the "<strong>Win11</strong>" option, and then select "<strong>VM Console</strong>" from the Remote Access.</p>
+<!-- Add picture -->
+<p><img alt="" src="../media/Pasted%20image%2020251001204206.png" /></p>
+<p>After selecting "<strong>VM Console</strong>", you will be redirected to the Windows operating system interface. If you see “You’re almost done setting up your PC,” then click “Remind me in 3 days.”</p>
+<!-- Add picture -->
+<p><img alt="" src="../media/Pasted%20image%2020251001204214.png" /></p>
+<p>Alternatively, you can choose an Ubuntu Desktop. Please click on the "<code>Ubuntu 24.04 Desktop</code>" and then select "<strong>VM Console</strong>" from the Remote Access.</p>
+<p><img alt="" src="../media/Pasted%20image%2020251001204223.png" /></p>
+<h2 id="11-install-nso-and-neds">1.1 Install NSO and NEDs</h2>
+<ul>
+<li>Click on Visual Studio Code shortcut and work on the Terminal window.</li>
+</ul>
+<!-- Add picture -->
+<p><img alt="" src="../media/Pasted%20image%2020251001204457.png" />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cisco@xrd-host:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>NSO-6.5-free/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cisco@xrd-host:~/NSO-6.5-free$<span class="w"> </span>ls<span class="w"> </span>*.bin
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ncs-6.5-cisco-asa-6.18.23-freetrial.signed.bin
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>ncs-6.5-cisco-ios-6.109.4-freetrial.signed.bin
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>ncs-6.5-cisco-iosxr-7.69-freetrial.signed.bin
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>ncs-6.5-cisco-nx-5.27.3-freetrial.signed.bin
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>nso-6.5-freetrial.container-image-build.linux.x86_64.signed.bin
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>nso-6.5-freetrial.container-image-prod.linux.x86_64.signed.bin
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>nso-6.5-freetrial.linux.x86_64.signed.bin
+</span></code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To extract the installer, first <strong>create a <code>work</code> directory</strong>. Then, run <code>bash ../nso-6.5-freetrial.linux.x86_64.signed.bin --skip-verification</code>. The <code>--skip-verification</code> flag is used to bypass the certification check.</p>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cisco@xrd-host:~/NSO-6.5-free$<span class="w"> </span>mkdir<span class="w"> </span>work
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cisco@xrd-host:~/NSO-6.5-free$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>work
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>cisco@xrd-host:~/NSO-6.5-free/work$
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>bash<span class="w"> </span>../nso-6.5-freetrial.linux.x86_64.signed.bin<span class="w"> </span>--skip-verification
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Unpacking...
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>cisco@xrd-host:~/NSO-6.5-free/work$
+</span></code></pre></div>
+<p>Execute the nso-6.5.linux.x86_64.installer.bin with the “—local-install” flag and choose the installation directory.</p>
+<p>Alternatively, you can choose an Ubuntu Desktop. Please click on the "Ubuntu 24.04 Desktop" and then select "VM Console" from the Remote Access.</p>
+<h2 id="11-install-nso-and-neds_1">1.1 - Install NSO and NEDs</h2>
+<ul>
+<li>Click on Visual Studio Code shortcut and work on the Terminal window.</li>
+</ul>
+<!-- Add picture -->
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cisco@xrd-host:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>NSO-6.5-free/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>cisco@xrd-host:~/NSO-6.5-free$<span class="w"> </span>ls<span class="w"> </span>*.bin
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>ncs-6.5-cisco-asa-6.18.23-freetrial.signed.bin
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>ncs-6.5-cisco-ios-6.109.4-freetrial.signed.bin
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>ncs-6.5-cisco-iosxr-7.69-freetrial.signed.bin
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>ncs-6.5-cisco-nx-5.27.3-freetrial.signed.bin
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>nso-6.5-freetrial.container-image-build.linux.x86_64.signed.bin
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>nso-6.5-freetrial.container-image-prod.linux.x86_64.signed.bin
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>nso-6.5-freetrial.linux.x86_64.signed.bin
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>First, you need to extract installer <code>“.bin”</code> file. To avoid messing up the directory, create a new directory named “work” and execute <code>“bash ../nso-6.5-freetrial.linux.x86_64.signed.bin”</code>. Using <code>“--skip-verification”</code> skips certification check.</p>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cisco@xrd-host:~/NSO-6.5-free$<span class="w"> </span>mkdir<span class="w"> </span>work
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>cisco@xrd-host:~/NSO-6.5-free$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>work
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>cisco@xrd-host:~/NSO-6.5-free/work$
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>bash<span class="w"> </span>../nso-6.5-freetrial.linux.x86_64.signed.bin<span class="w"> </span>--skip-verification
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Unpacking...
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>cisco@xrd-host:~/NSO-6.5-free/work$
+</span></code></pre></div>
+<p>Execute the <strong>nso-6.5.linux.x86_64.installer.bin</strong> with the “—local-install” flag and choose the installation directory.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cisco@xrd-host:~/NSO-6.5-free/work$
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>bash<span class="w"> </span>nso-6.5.linux.x86_64.installer.bin<span class="w"> </span>--local-install<span class="w"> </span>~/NSO-INSTALL
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>INFO<span class="w">  </span>Using<span class="w"> </span>temporary<span class="w"> </span>directory<span class="w"> </span>/tmp/ncs_installer.780985<span class="w"> </span>to<span class="w"> </span>stage<span class="w"> </span>NCS<span class="w"> </span>installation<span class="w"> </span>bundle
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>INFO<span class="w">  </span>Unpacked<span class="w"> </span>ncs-6.5<span class="w"> </span><span class="k">in</span><span class="w"> </span>/home/cisco/NSO-INSTALL
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>INFO<span class="w">  </span>Found<span class="w"> </span>and<span class="w"> </span>unpacked<span class="w"> </span>corresponding<span class="w"> </span>DOCUMENTATION_PACKAGE
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>INFO<span class="w">  </span>Found<span class="w"> </span>and<span class="w"> </span>unpacked<span class="w"> </span>corresponding<span class="w"> </span>EXAMPLE_PACKAGE
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>INFO<span class="w">  </span>Found<span class="w"> </span>and<span class="w"> </span>unpacked<span class="w"> </span>corresponding<span class="w"> </span>JAVA_PACKAGE
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>INFO<span class="w">  </span>Generating<span class="w"> </span>default<span class="w"> </span>SSH<span class="w"> </span>hostkey<span class="w"> </span><span class="o">(</span>this<span class="w"> </span>may<span class="w"> </span>take<span class="w"> </span>some<span class="w"> </span><span class="nb">time</span><span class="o">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>INFO<span class="w">  </span>SSH<span class="w"> </span>/home/cisco/NSO-INSTALL/etc/ncs/ssh/ssh_host_ecdsa_key<span class="w"> </span>hostkey<span class="w"> </span>generated
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>INFO<span class="w">  </span>SSH<span class="w"> </span>/home/cisco/NSO-INSTALL/etc/ncs/ssh/ssh_host_ed25519_key<span class="w"> </span>hostkey<span class="w"> </span>generated
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>INFO<span class="w">  </span>Generating<span class="w"> </span>self-signed<span class="w"> </span>certificates<span class="w"> </span><span class="k">for</span><span class="w"> </span>HTTPS
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>INFO<span class="w">  </span>Environment<span class="w"> </span>set-up<span class="w"> </span>generated<span class="w"> </span><span class="k">in</span><span class="w"> </span>/home/cisco/NSO-INSTALL/ncsrc
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>INFO<span class="w">  </span>NSO<span class="w"> </span>installation<span class="w"> </span>script<span class="w"> </span>finished
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>INFO<span class="w">  </span>Found<span class="w"> </span>and<span class="w"> </span>unpacked<span class="w"> </span>corresponding<span class="w"> </span>NETSIM_PACKAGE
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>INFO<span class="w">  </span>NCS<span class="w"> </span>installation<span class="w"> </span><span class="nb">complete</span>
+</span></code></pre></div>
+<p>Go to the installation folder and source NSO
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cisco@xrd-host:~/NSO-6.5-free/work$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/NSO-INSTALL/
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>cisco@xrd-host:~/NSO-INSTALL$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>ncsrc
+</span></code></pre></div></p>
+<p>Execute the NSO Setup script
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cisco@xrd-host:~/NSO-INSTALL$<span class="w"> </span>ncs-setup<span class="w"> </span>--dest<span class="w"> </span>nso-instance
+</span></code></pre></div></p>
+<p>Change directory to the “nso-instance” folder and find “ncs.conf”.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cisco@xrd-host:~/NSO-INSTALL$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>nso-instance/
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>cisco@xrd-host:~/NSO-INSTALL/nso-instance$<span class="w"> </span>ls
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>README.ncs<span class="w">  </span>logs<span class="w">  </span>ncs-cdb<span class="w">  </span>ncs.conf<span class="w">  </span>packages<span class="w">  </span>scripts<span class="w">  </span>state
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>From NSO 6.5, WebUI and RESTCONF are allowed only to NSO server’s hostname (such as “<em>localhost</em>”). To allow an access via IP address, following line has to be added to ncs.conf. Add <code>&lt;server-alias&gt;198.18.134.27&lt;/server-alias&gt;</code> to line 330 and save the file.</p>
+</div>
+<p>Once added, start NSO by executing <code>ncs</code> command.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>cisco@xrd-host:~/NSO-INSTALL/nso-instance$<span class="w"> </span>ncs
+</span></code></pre></div></p>
+<p>Check if NSO is running</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cisco@xrd-host:~/NSO-INSTALL/nso-instance$<span class="w"> </span>ncs<span class="w"> </span>--status<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>started
+</span></code></pre></div>
+<p>status: <strong>started</strong></p>
+<p>To log in to NSO via the Web UI, open Firefox and access following URL: <a href="http://198.18.134.27:8080/login.html">http://198.18.134.27:8080/login.html</a></p>
+<p>You can log in using the default username and password, which are "admin" for both the username and password fields.
+<img alt="" src="../media/Pasted%20image%2020251001204550.png" /></p>
+<p>After logging in, you will be directed to the main page, which displays the available applications and components provided by NSO.</p>
+<p><img alt="" src="../media/Pasted%20image%2020251001204557.png" /></p>
+<p>Please navigate to the "Config Editor" section.</p>
+<p><img alt="" src="../media/Pasted%20image%2020251001204604.png" /></p>
+<p>Since this is a fresh installation and we do not have any packages yet, let's proceed by adding the Network Element Drivers (NEDs).</p>
+<p>In the <em>"~/NSO-6.5-free"</em> folder, you should find some file starting with <code>ncs-</code> and they are NED packages.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cisco@xrd-host:~/NSO-INSTALL/nso-instance$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/NSO-6.5-free/
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>cisco@xrd-host:~/NSO-6.5-free$<span class="w"> </span>ls<span class="w"> </span>ncs*
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>ncs-6.5-cisco-asa-6.18.23-freetrial.signed.bin<span class="w">  </span>ncs-6.5-cisco-iosxr-7.69-freetrial.signed.bin
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>ncs-6.5-cisco-ios-6.109.4-freetrial.signed.bin<span class="w">  </span>ncs-6.5-cisco-nx-5.27.3-freetrial.signed.bin
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>cisco@xrd-host:~/NSO-6.5-free$
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You also need to extract NED files. To avoid messing up the directory, go to the work folder and execute <code>bash ../&lt;ned.signed.bin&gt;</code> commands. Using <code>--skip-verification</code> skips certification check.</p>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>cisco@xrd-host:~/NSO-6.5-free$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>work/
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>cisco@xrd-host:~/NSO-6.5-free/work$
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>bash<span class="w"> </span>../ncs-6.5-cisco-iosxr-7.69-freetrial.signed.bin<span class="w"> </span>--skip-verification
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Unpacking...
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>cisco@xrd-host:~/NSO-6.5-free/work$
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>“<code>ncs-6.5-cisco-iosxr-7.69.tar.gz</code>” file is the NED package. Copy the file to <em>nso-instance/packages</em> folder.</p>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>cisco@xrd-host:~/NSO-6.5-free/work$
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>cp<span class="w"> </span>ncs-6.5-cisco-iosxr-7.69.tar.gz<span class="w"> </span>~/NSO-INSTALL/nso-instance/packages/
+</span></code></pre></div>
+<p>Please return to the NSO Web UI, go to <code>ncs:packages</code> and select “Actions”, then click the "Reload" button for the packages.
+<img alt="" src="../media/Pasted%20image%2020251001204649.png" />
+After executing the "Run reload action" button, you should now be able to see the "<code>cisco-ios-xr</code>" package in the list.
+<img alt="" src="../media/Pasted%20image%2020251001204700.png" /></p>
+<p>Now that we have added our Network Element Driver (NED), let's navigate to the "<strong>Devices</strong>" section.
+<img alt="" src="../media/Pasted%20image%2020251001204721.png" /></p>
+<p>Currently, there are no devices listed. However, we have two options to add them: manually by clicking on the <strong>"+"</strong> button, or programmatically using scripts or APIs.</p>
+<h2 id="12-registering-xrd-routers">1.2 – Registering XRd routers</h2>
+<p>There are two XRd routers running on the server which you have installed NSO. Please confirm they are running by executing <code>docekr ps</code>.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>cisco@xrd-host:~/NSO-6.5-free/work$<span class="w"> </span>docker<span class="w"> </span>ps
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>CONTAINER<span class="w"> </span>ID<span class="w">   </span>IMAGE<span class="w">                             </span>COMMAND<span class="w">                  </span>CREATED<span class="w">       </span>STATUS<span class="w">      </span>PORTS<span class="w">     </span>NAMES
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>8502937299d3<span class="w">   </span>ios-xr/xrd-control-plane:25.2.1<span class="w">   </span><span class="s2">&quot;/usr/local/sbin/init&quot;</span><span class="w">   </span><span class="m">5</span><span class="w"> </span>weeks<span class="w"> </span>ago<span class="w">   </span>Up<span class="w"> </span><span class="m">4</span><span class="w"> </span>days<span class="w">             </span>xr-2
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>2d77e0ef76f7<span class="w">   </span>alpine:3.15<span class="w">                       </span><span class="s2">&quot;/bin/sh -c &#39;ip rout…&quot;</span><span class="w">   </span><span class="m">5</span><span class="w"> </span>weeks<span class="w"> </span>ago<span class="w">   </span>Up<span class="w"> </span><span class="m">4</span><span class="w"> </span>days<span class="w">             </span><span class="nb">source</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>4a68f412191b<span class="w">   </span>ios-xr/xrd-control-plane:25.2.1<span class="w">   </span><span class="s2">&quot;/usr/local/sbin/init&quot;</span><span class="w">   </span><span class="m">5</span><span class="w"> </span>weeks<span class="w"> </span>ago<span class="w">   </span>Up<span class="w"> </span><span class="m">4</span><span class="w"> </span>days<span class="w">             </span>xr-1
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>593c076cbbe7<span class="w">   </span>alpine:3.15<span class="w">                       </span><span class="s2">&quot;/bin/sh -c &#39;ip rout…&quot;</span><span class="w">   </span><span class="m">5</span><span class="w"> </span>weeks<span class="w"> </span>ago<span class="w">   </span>Up<span class="w"> </span><span class="m">4</span><span class="w"> </span>days<span class="w">             </span>dest
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>cisco@xrd-host:~/NSO-6.5-free/work$
+</span></code></pre></div>
+<p>A device template has been prepared to load these devices. Go to NSO-6.5-free and load “devices.xml” by using the “ncs_load” command to load them. -l ( load ) -m ( merge )</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>cisco@xrd-host:~/NSO-6.5-free/work$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/NSO-6.5-free/
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>cisco@xrd-host:~/NSO-6.5-free$<span class="w"> </span>ncs_load<span class="w"> </span>-l<span class="w"> </span>-m<span class="w"> </span>devices.xml
+</span></code></pre></div>
+<p>Go back to NSO and click on Devices and you see two XRd routers there.
+<img alt="" src="../media/Pasted%20image%2020251001204735.png" />
+The first thing you need to do after a device to NSO is execute the “<code>sync-from</code>” so you update NSO CDB with the device configuration. Select all devices and make a <code>sync-from</code>
+<img alt="" src="../media/Pasted%20image%2020251001204745.png" /></p>
+<p><img alt="" src="../media/Pasted%20image%2020251001204755.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code>sync-from</code> failed, please do “<code>fetch ssh host keys</code>” and try again.</p>
+</div>
+<h2 id="13-configure-devices-using-nso">1.3 - Configure Devices using NSO</h2>
+<p>You can enter in ios-xr-0 to verify interface configurations. To navigate in the configurations, you can use the Top bar (where I typed “confi” ) or scroll down and look for what you want to configure.</p>
+<!-- Add picture -->
+<p><img alt="" src="../media/Pasted%20image%2020251001204816.png" /></p>
+<p>You can follow the path and verify the <code>GigabitEthernet0/0/0/0</code> configuration</p>
+<p><strong>Full Path:</strong> <code>/ncs:devices/device{xr-1}/config/cisco-ios-xr:interface/GigabitEthernet{0/0/0/0}/ipv4/address/</code></p>
+<!-- Add picture -->
+
+<p>Let’s make a change in the IP address. To do it, you just need to click on Edit Config and then change the field IP. Please change address from “<code>10.1.1.3</code>” to “<code>10.1.1.30</code>”.</p>
+<!-- Add picture -->
+
+<p>You can notice there is a green bar on the left of the tile that you edited. This means there is a candidate configuration on-going, and this configuration will only be pushed to the device after you commit.</p>
+<p>Let’s go the <code>Tools &gt; Commit Manager</code> and see “<code>config</code>” tab.</p>
+<!-- Add picture -->
+<p>In the commit manager we have a diff view like on github. If we agree with the changes, we click on commit.</p>
+<!-- Add picture -->
+<p>After our commit is done, we can see a rollback is created. This is because, every time we make a commit in NSO we create a rollback file that allow us to revert what we did.</p>
+<!-- Add picture -->
+<p>If we go back to the router, we can see that our device already has the new IP on the Loopback Interface</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>cisco@xrd-host:~$<span class="w"> </span>ssh<span class="w"> </span>admin@172.30.0.2
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="o">(</span>admin@172.30.0.2<span class="o">)</span><span class="w"> </span>Password:<span class="w"> </span><span class="o">(</span><span class="nv">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cisco123<span class="o">)</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Last<span class="w"> </span>login:<span class="w"> </span>Tue<span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">03</span>:08:41<span class="w"> </span><span class="m">2025</span><span class="w"> </span>from<span class="w"> </span><span class="m">172</span>.30.0.1
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>RP/0/RP0/CPU0:xr-1#show<span class="w"> </span>run<span class="w"> </span>interface<span class="w"> </span>gigabitEthernet<span class="w"> </span><span class="m">0</span>/0/0/0
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>Tue<span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">03</span>:10:55.127<span class="w"> </span>UTC
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>!<span class="w"> </span>Configure<span class="w"> </span>left<span class="w"> </span>data<span class="w"> </span>port
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>interface<span class="w"> </span>GigabitEthernet0/0/0/0
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w"> </span>ipv4<span class="w"> </span>address<span class="w"> </span><span class="m">10</span>.1.1.30<span class="w"> </span><span class="m">255</span>.255.255.0
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>!
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>RP/0/RP0/CPU0:xr-1#
+</span></code></pre></div>
+<h2 id="14-use-rollbacks">1.4 - Use Rollback’s</h2>
+<p>To Rollback this we just need to go back to Commit Manager, click on “<code>Load/Save</code>” Button and choose the rollback file that we want.</p>
+<!-- Add picture -->
+<p>We can see the user that made the commit and what northbound interface was used. In this case was the user admin via webui. We click on load, and we can see that the change will be reverted.</p>
+<!-- Add picture -->
+<p>After the commit we can check on the device that the change was reverted.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>RP/0/RP0/CPU0:xr-1#show<span class="w"> </span>run<span class="w"> </span>interface<span class="w"> </span>gigabitEthernet<span class="w"> </span><span class="m">0</span>/0/0/0
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Tue<span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">03</span>:13:12.733<span class="w"> </span>UTC
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>!<span class="w"> </span>Configure<span class="w"> </span>left<span class="w"> </span>data<span class="w"> </span>port
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>interface<span class="w"> </span>GigabitEthernet0/0/0/0
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w"> </span>ipv4<span class="w"> </span>address<span class="w"> </span><span class="m">10</span>.1.1.3<span class="w"> </span><span class="m">255</span>.255.255.0
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>!
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>RP/0/RP0/CPU0:xr-1#
+</span></code></pre></div>
+<h2 id="15-use-nso-capabilities-to-detect-out-of-band-device-configurations">1.5 - Use NSO capabilities to detect Out-of-Band device configurations</h2>
+<p>So, now let’s see one of the main NSO capabilities (check-sync, sync-from, sync-to)</p>
+<p>Login into <strong>xr-1</strong> device using SSH and configure the Loopback 100 interface.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>RP/0/RP0/CPU0:xr-1#configure<span class="w"> </span>terminal
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Tue<span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">03</span>:15:28.503<span class="w"> </span>UTC
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>RP/0/RP0/CPU0:xr-1<span class="o">(</span>config<span class="o">)</span><span class="c1">#interface Loopback 100</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>RP/0/RP0/CPU0:xr-1<span class="o">(</span>config-if<span class="o">)</span><span class="c1">#description out-of-band change</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>RP/0/RP0/CPU0:xr-1<span class="o">(</span>config-if<span class="o">)</span><span class="c1">#commit</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>Tue<span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">03</span>:15:40.348<span class="w"> </span>UTC
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>RP/0/RP0/CPU0:xr-1<span class="o">(</span>config-if<span class="o">)</span><span class="c1">#end</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>RP/0/RP0/CPU0:xr-1#show<span class="w"> </span>run<span class="w"> </span>interface<span class="w"> </span>Loopback<span class="w"> </span><span class="m">100</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>Tue<span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">03</span>:15:44.240<span class="w"> </span>UTC
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>interface<span class="w"> </span>Loopback100
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w"> </span>description<span class="w"> </span>out-of-band<span class="w"> </span>change
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>!
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>RP/0/RP0/CPU0:xr-1#
+</span></code></pre></div></p>
+<p>Since this change was done out of NSO we can go to NSO WEB UI / CLI and see if the device is in sync.</p>
+<!-- Add picture -->
+<p>We got a red alert because this change was done out of NSO. If we click on Compare-config we can see exactly what was done out of NSO.</p>
+<!-- Add picture -->
+<p>And now we’ve 2 options</p>
+<p><strong>Option 1:</strong> We “<code>SYNC-FROM</code>” the device</p>
+<p><strong>Option 2:</strong> We “<code>SYNC-TO</code>” device</p>
+<p>If we go with Option 1, we will grab the configuration that was done in the device without using NSO and push to NSO. If we use the Option 2, we will push to the device the configuration that NSO had previously about the device.</p>
+<p>In this case we want to delete that configuration that was done without NSO so we will “<code>sync-to</code>”</p>
+<!-- Add picture -->
+<p>We can now click on Check-Sync and confirm that both device and NSO device configuration are the same</p>
+<!-- Add picture -->
+<p>If we login to the device, we will confirm that the VTP configuration is not there anymore</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>RP/0/RP0/CPU0:xr-1#show<span class="w"> </span>run<span class="w"> </span>interface<span class="w"> </span>Loopback<span class="w"> </span><span class="m">100</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>Tue<span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">03</span>:19:34.654<span class="w"> </span>UTC
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>%<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>configuration<span class="w"> </span>item<span class="o">(</span>s<span class="o">)</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>RP/0/RP0/CPU0:xr-1#
+</span></code></pre></div>
+<h2 id="16-create-device-groups-and-device-templates">1.6 - Create Device Groups and Device Templates</h2>
+<p>Ok, so what if we want to apply configurations to several devices at the same time? Let’s do it. Let’s create a device Group.</p>
+<p>Go into Devices and select the “Device groups” tab.</p>
+<!-- Add picture -->
+<p>Click “<strong>+ Add device group</strong>” button.</p>
+<!-- Add picture -->
+<p>Add a name like “<em>ios-xr-devices</em>” and click Create.
+Then select devices and press “<strong>+Add to device group</strong>”.</p>
+<!-- Add picture -->
+<p>Click “<strong>Create device group</strong>” button. Following should be the result.</p>
+<!-- Add picture -->
+<p>After creating a Device group, let’s create a Device Template so we can create a config that we will spread across all the devices in the group with just few clicks.</p>
+<p>Go to the “<strong>Configuration Editor</strong>” and choose the “<code>ncs:devices</code>” module and click “<strong>Edit config</strong>” in the top menu.</p>
+<!-- Add picture -->
+<p>In the template tile, click on the <strong>+</strong> Button</p>
+<!-- Add picture -->
+<p>Enter in the template and select the NED that we’re using (<code>cisco-iosxr</code>) and click <strong>Confirm</strong>.</p>
+<!-- Add picture -->
+<p>Click on the NED to setup the configuration.</p>
+<!-- Add picture -->
+<p>Now click on the config (inside the NED)</p>
+<!-- Add picture -->
+<p>And now you just need to make the configurations that you want to apply. Let’s create a DNS configuration. Look for Domain.</p>
+<!-- Add picture -->
+<p>Add the Domain name and name-server.</p>
+<!-- Add picture -->
+<p>Now, we go to the commit manager and let’s see the differences.</p>
+<p>From the config diff we can see that we’ve created a device-group and the configuration template that we’ve created.</p>
+<!-- Add picture -->
+<p>After commit, we can now go to the Device Group and Apply the Template.</p>
+<p>Go to the Configuration Editor, “<code>ncs:devices</code>” module and click on the recently created device-group “<code>ios-xr-devices</code>” the click “<strong>Actions</strong>” in the top menu.</p>
+<!-- Add picture -->
+<!-- Add picture -->
+
+<p>Then we click on “Apply-Template” button</p>
+<!-- Add picture -->
+<p>And now, select the “template-name” that we’ve created (you might need to scroll up).</p>
+<!-- Add picture -->
+
+<p>Scroll down and click on “Run apply-template action”.</p>
+<p>We can observe the apply-template result “ok” for each device present in the device group.</p>
+<!-- Add picture -->
+<p>If we go inside the Device CLI we can see that the configurations were applied.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>cisco@xrd-host:~$<span class="w"> </span>ssh<span class="w"> </span>admin@172.30.0.2
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="o">(</span>admin@172.30.0.2<span class="o">)</span><span class="w"> </span>Password:<span class="w"> </span><span class="o">(</span><span class="nv">password</span><span class="o">=</span>cisco123<span class="o">)</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Last<span class="w"> </span>login:<span class="w"> </span>Tue<span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">09</span>:31:58<span class="w"> </span><span class="m">2025</span><span class="w"> </span>from<span class="w"> </span><span class="m">172</span>.30.0.1
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>RP/0/RP0/CPU0:xr-1#show<span class="w"> </span>run<span class="w"> </span>domain
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>Tue<span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">09</span>:36:10.562<span class="w"> </span>UTC
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>domain<span class="w"> </span>name-server<span class="w"> </span><span class="m">2</span>.2.2.2
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>RP/0/RP0/CPU0:xr-1#
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NTP configuration is not supported on XRd. Need a different scenario! </p>
+</div>
+<h2 id="17-create-a-simple-nso-service">1.7 - Create a Simple NSO Service</h2>
+<p>Templates are very flexible and easy to create. But, they lack of consistency. If someone goes thought NSO and change one configuration that you’ve done via template, you don’t have an easy way to see it and rollback. For that, you have the NSO Services.</p>
+<p>An NSO service will allow you to see if the configuration that you applied is still present on the devices. And if someone changed, we could compare-configs and re-deploy if necessary.</p>
+<p>First step is to create a service.</p>
+<p>NSO already brings a script that creates a service skeleton.</p>
+<p>Use the command “<code>ncs-make-package -h</code>”</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>RP/0/RP0/CPU0:xr-1#exit
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>Connection<span class="w"> </span>to<span class="w"> </span><span class="m">172</span>.30.0.2<span class="w"> </span>closed.
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>cisco@xrd-host:~$<span class="w"> </span>ncs-make-package<span class="w"> </span>-h
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>Usage:<span class="w"> </span>ncs-make-package<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span>package-name
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">  </span>ncs-make-package<span class="w"> </span>--netconf-ned<span class="w"> </span>DIR<span class="w"> </span>package-name
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span>ncs-make-package<span class="w"> </span>--lsa-netconf-ned<span class="w"> </span>DIR<span class="w"> </span>package-name
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">  </span>ncs-make-package<span class="w"> </span>--generic-ned-skeleton<span class="w"> </span>package-name
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">  </span>ncs-make-package<span class="w"> </span>--snmp-ned<span class="w"> </span>DIR<span class="w"> </span>package-name
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">  </span>ncs-make-package<span class="w"> </span>--service-skeleton<span class="w"> </span>TYPE<span class="w"> </span>package-name
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">  </span>ncs-make-package<span class="w"> </span>--data-provider-skeleton<span class="w"> </span>package-name
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">  </span>ncs-make-package<span class="w"> </span>--erlang-skeleton<span class="w"> </span>package-name
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">  </span>ncs-make-package<span class="w"> </span>--nano-service-skeleton<span class="w"> </span>TYPE<span class="w"> </span>package-name
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">      </span>where<span class="w"> </span>TYPE<span class="w"> </span>is<span class="w"> </span>one<span class="w"> </span>of:
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">          </span>java<span class="w">                  </span>Java<span class="w"> </span>based<span class="w"> </span>service
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">          </span>java-and-template<span class="w">     </span>Java<span class="w"> </span>service<span class="w"> </span>with<span class="w"> </span>template
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">          </span>python<span class="w">                </span>Python<span class="w"> </span>based<span class="w"> </span>service
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">          </span>python-and-template<span class="w">   </span>Python<span class="w"> </span>service<span class="w"> </span>with<span class="w"> </span>template
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="w">          </span>template<span class="w">              </span>Template<span class="w"> </span>service<span class="w"> </span><span class="o">(</span>no<span class="w"> </span>code<span class="o">)</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="w">  </span>&lt;…output<span class="w"> </span>omitted<span class="w"> </span><span class="k">for</span><span class="w"> </span>brevity…&gt;
+</span></code></pre></div>
+<p>You can see that we’ve many options here.</p>
+<p>Python and Java options are when we want to apply templates/services, based on logic. Imagine you want to apply QOS data to a device interface but only based on the interface high utilization. You can push that data via external APIs and only send the device configs according to what you receive.</p>
+<p>Let’s choose the <strong>python-and-template</strong> option. (Use it inside the packages folder, otherwise you will have to copy the folder there after)</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>cisco@xrd-host:~$ cd NSO-INSTALL/nso-instance/packages/
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>cisco@xrd-host:~/NSO-INSTALL/nso-instance/packages$  
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>ncs-make-package --service-skeleton python-and-template NTP
+</span></code></pre></div>
+<p>Now, let’s open the VS Code to build our script.</p>
+<p>Choose the NSO folder and click Ok. Expand the explorer until the packages folder under nso-instance.</p>
+<!-- Add picture -->
+<p>After you run the script, you will find this structure</p>
+<!-- Add picture -->
+
+<p>package-meta-data.xml is where you will find the service version and other useful information</p>
+<!-- Add picture -->
+<p>Then you have the XML file and the YANG file.</p>
+<p>This is what we will find in the XML file</p>
+<!-- Add picture -->
+
+<p>And this is what we will find on the YANG file:</p>
+<p>Our next step will be:</p>
+<p>Go to NSO and make the configurations that we want to automate via the service.</p>
+<p>After all the configs are done instead of doing the commit, we will ask for the output of the configurations to be sent in XML.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>cisco@xrd-host:~/NSO-INSTALL/nso-instance/packages$ ncs_cli -Cu admin
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>User admin last logged in 2025-09-30T09:49:14.561558+00:00, to xrd-host, from 10.16.68.225 using cli-ssh
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>admin connected from 10.16.68.225 using ssh on xrd-host
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>admin@ncs# config
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>Entering configuration mode terminal
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>Current configuration users:
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>admin http (webui from 198.18.133.100) on since 2025-09-30 09:07:42 terminal mode
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>admin@ncs(config)# devices device xr-1
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>admin@ncs(config-device-xr-1)# config
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>admin@ncs(config-config)# ntp
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>admin@ncs(config-ntp)# server 172.16.22.44 minpoll 8 maxpoll 12
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>admin@ncs(config-ntp)# commit dry-run outformat xml
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>result-xml {
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>    local-node {
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>        data &lt;devices xmlns=&quot;http://tail-f.com/ns/ncs&quot;&gt;
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>               &lt;device&gt;
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>                 &lt;name&gt;xr-1&lt;/name&gt;
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>                 &lt;config&gt;
+</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a>                   &lt;ntp xmlns=&quot;http://tail-f.com/ned/cisco-ios-xr&quot;&gt;
+</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a>                     &lt;server&gt;
+</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>                       &lt;server-list&gt;
+</span><span id="__span-22-27"><a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a>                         &lt;name&gt;172.16.22.44&lt;/name&gt;
+</span><span id="__span-22-28"><a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a>                         &lt;minpoll&gt;8&lt;/minpoll&gt;
+</span><span id="__span-22-29"><a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a>                         &lt;maxpoll&gt;12&lt;/maxpoll&gt;
+</span><span id="__span-22-30"><a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a>                       &lt;/server-list&gt;
+</span><span id="__span-22-31"><a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a>                     &lt;/server&gt;
+</span><span id="__span-22-32"><a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a>                   &lt;/ntp&gt;
+</span><span id="__span-22-33"><a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a>                 &lt;/config&gt;
+</span><span id="__span-22-34"><a id="__codelineno-22-34" name="__codelineno-22-34" href="#__codelineno-22-34"></a>               &lt;/device&gt;
+</span><span id="__span-22-35"><a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a>             &lt;/devices&gt;
+</span><span id="__span-22-36"><a id="__codelineno-22-36" name="__codelineno-22-36" href="#__codelineno-22-36"></a>    }
+</span><span id="__span-22-37"><a id="__codelineno-22-37" name="__codelineno-22-37" href="#__codelineno-22-37"></a>
+</span><span id="__span-22-38"><a id="__codelineno-22-38" name="__codelineno-22-38" href="#__codelineno-22-38"></a>}
+</span></code></pre></div>
+<p>Now, we grab the XML that we got from the NSO cli config and we paste into the skeleton XML file that was generated.</p>
+<p>We only grab what is inside the <config></config> flags.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">&lt;ntp</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://tail-f.com/ned/cisco-ios-xr&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">     </span><span class="nt">&lt;server&gt;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">         </span><span class="nt">&lt;server-list&gt;</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">              </span><span class="nt">&lt;name&gt;</span>172.16.22.44<span class="nt">&lt;/name&gt;</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">              </span><span class="nt">&lt;minpoll&gt;</span>8<span class="nt">&lt;/minpoll&gt;</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">              </span><span class="nt">&lt;maxpoll&gt;</span>12<span class="nt">&lt;/maxpoll&gt;</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">        </span><span class="nt">&lt;/server-list&gt;</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">     </span><span class="nt">&lt;/server&gt;</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="nt">&lt;/ntp&gt;</span>
+</span></code></pre></div>
+<p>This should be the result.</p>
+<!-- Add picture -->
+<p>If we want to apply this static config. We just need to compile the service and we’re good to go.</p>
+<p>But, let’s see how we define variables.</p>
+<p>In this list I see 3 inputs:
+- Server IP-address
+- Minpool
+- Maxpool</p>
+<p>After defining the variables our XML should look like this</p>
+<!-- Add picture -->
+<p>Going to the YANG after setting up the definition for each variable they should look like this.</p>
+<p>So we will setup as mandatory the server-address and then the minpoll and maxpoll we setup as non-mandatory and with default values.</p>
+<!-- Add picture -->
+<p>After all of this is done, we go to the packages folder. Change Directory to NTP/src</p>
+<p>And apply the “<strong>make</strong>” command.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>admin@ncs(config-ntp)# end
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>Uncommitted changes found, commit them? [yes/no/CANCEL] no
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>admin@ncs# exit
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>cisco@xrd-host:~/NSO-INSTALL/nso-instance/packages$ cd NTP/src/
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>cisco@xrd-host:~/NSO-INSTALL/nso-instance/packages/NTP/src$ make
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>mkdir -p ../load-dir
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>/home/cisco/NSO-INSTALL/bin/ncsc  `ls NTP-ann.yang  &gt; /dev/null 2&gt;&amp;1 &amp;&amp; echo &quot;-a NTP-ann.yang&quot;` \
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>     --fail-on-warnings \
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>      \
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>     -c -o ../load-dir/NTP.fxs yang/NTP.yang
+</span></code></pre></div>
+cisco@xrd-host:~/NSO-INSTALL/nso-instance/packages/NTP/src$</p>
+<p>Then, we should go to NSO, and ask for a package reload. Make sure the result is true.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>cisco@xrd-host:~/NSO-INSTALL/nso-instance/packages/NTP/src$  
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>ncs_cli -Cu admin
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>User admin last logged in 2025-09-30T09:58:35.496282+00:00, to xrd-host, from 10.16.68.225 using cli-ssh
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>admin connected from 10.16.68.225 using ssh on xrd-host
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>admin@ncs# packages reload
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>&gt;&gt;&gt; System upgrade is starting.
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>&gt;&gt;&gt; Sessions in configure mode must exit to operational mode.
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>&gt;&gt;&gt; No configuration changes can be performed until upgrade has completed.
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>&gt;&gt;&gt; System upgrade has completed successfully.
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>reload-result {
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>    package NTP
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>    result true
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>}
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>reload-result {
+</span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>    package cisco-iosxr-cli-7.69
+</span><span id="__span-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>    result true
+</span><span id="__span-25-19"><a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>}
+</span><span id="__span-25-20"><a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>
+</span><span id="__span-25-21"><a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>admin@ncs#
+</span></code></pre></div>
+<p>After the reload you will see the NTP service package that we’ve just created.</p>
+<!-- Add picture -->
+<p>Going back to the Homepage we click on the “Services”</p>
+<!-- Add picture -->
+<p>We select the NTP service that we’ve created. Click on “+ Add service” then again click + button.</p>
+<!-- Add picture -->
+<p>We should give a service name (help us identify the configs applied) and setup the mandatory arguments, in our case, the server-address</p>
+<!-- Add picture -->
+<p>Service Created! Let’s add the devices that we want to affect with the service.</p>
+<!-- Add picture -->
+<p>Add the devices you want by clicking on Edit Config and on section device select it</p>
+<!-- Add picture -->
+<p>We can keep the minpoll and maxpoll with the default values. And, now, if we go to the commit manager we will see the configs applied to all the devices that we’ve selected.</p>
+<!-- Add picture -->
+<p>If we click on native config, we can even see the native commands that NSO will send to the devices.</p>
+<!-- Add picture -->
+<p>After commit, we can now see if the service is in Sync</p>
+<!-- Add picture -->
+<p>Now, to see the how powerful the services are let’s go inside 2 devices, ios-xr-2 and ios-xr-3 and delete the NTP config.</p>
+<p>Go to the Device Manager, click on IOS-XR-2 and delete the ntp server configs by clicking on Edit Config, selecting them and clicking on the “-“ button. Then repeat for ios-xr-3.</p>
+<!-- Add picture -->
+<!-- Add picture -->
+<p>Go to the commit manager and press “<strong>Commit</strong>”</p>
+<!-- Add picture -->
+<p>Now, if we go back to the “Service Manager” and we click on “Check-Sync” we will get a RED signal.</p>
+<!-- Add picture -->
+<!-- Add picture -->
+<p>By clicking on Re-deploy Dry-Run</p>
+<p>We will see exactly what needs to be added to the devices for them to be compliant with the service. And to configure the devices again we just need to click on re-deploy.</p>
+<p>And, the service was re-deployed. If we connect to ios-xr-2 and make a show-run we can see that the configs are there again.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>cisco@nso-613:~/NSO-TEST/nso-instance/packages/NTP/src$
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>ncs-netsim cli-c ios-xr-2
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>ios-xr-2# show run
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>admin
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a> exit-admin-config
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>!
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>domain name cisco.com
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>domain name-server 2.2.2.2
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>ntp
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a> peer 192.168.22.33
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a> server 172.16.22.44 minpoll 8 maxpoll 12
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>exit
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>vtp mode off
+</span></code></pre></div>
+<h2 id="18-create-role-based-and-resource-based-access-control-rules">1.8 - Create Role Based and Resource Based Access Control rules</h2>
+<p>In this section the idea is to show you how we can create Role Based and Resource Based Access Control rules in NSO.</p>
+<p>The first step is to add a new user.</p>
+<p>In the Configuration Editor we navigate to <code>aaa:aaa</code> module</p>
+<!-- Add picture -->
+<p>Then we go to the authentication/users then we click on Edit Config and the “<strong>+</strong>” button</p>
+<!-- Add picture -->
+<p>Let’s create the user “<strong>read_user</strong>”</p>
+<!-- Add picture -->
+<p>After this we can “<strong>Commit</strong>”</p>
+<!-- Add picture -->
+<p>And login to the new recently created user</p>
+<!-- Add picture -->
+<p>We can now go to the Device Manager and check if this user is able to do all the normal operations</p>
+<!-- Add picture -->
+<p>And, as we can see Ping is not possible because the new user does not belong to any authgroup.</p>
+<p>The Authgroup is the feature that allows mapping the NSO local user to the device local user. Each Device much belong to an authgroup, and each user much be present in one authgroup as well ( or, have a default-mapping )</p>
+<p>To create a new Authgoup or associate the user with an existing authgroup we go to the Configuration Editor, to the module ncs:devices</p>
+<!-- Add picture -->
+<p>Then we select <strong>authgroup</strong> “<code>default</code>”</p>
+<!-- Add picture -->
+<p>At this moment we can make these operations on the “<strong>read_user</strong>” since we still don’t have not made any change to permissions.</p>
+<!-- Add picture -->
+<p>Now, inside the “default” authgroup we’ve the umap and default-map.</p>
+<p>The umap, is a mapping for a local user that belongs to this Authgroup.</p>
+<p>And, we’ve a default-map, this one is a default mapping for each user that belongs to this group.</p>
+<p>Let’s add our read_user here</p>
+<!-- Add picture -->
+<p>Now, you can put the remote authentication for the devices that will belong have this authgroup</p>
+<!-- Add picture -->
+<p>Now, you can choose what will be the credentials that this NSO user will use when connecting to the devices. ( we can use admin-admin for the demo proposes ).</p>
+<p>Go to the commit manager and commit.</p>
+<p>Going now back to the “Device Manager” we can now check the Connect</p>
+<!-- Add picture -->
+<p>For now, this user can make all the normal operations</p>
+<p>Let’s start making some restrictions.</p>
+<p>Go back to the admin user.</p>
+<p>Then, go to the configuration Editor.</p>
+<p>And then to the module nacm:nacm</p>
+<!-- Add picture -->
+<p>In the NACM module you will see the “<strong>rule-list</strong>” and the “<strong>groups</strong>”</p>
+<p>So, to set permissions we need to associate a user to a group, and then associate that group to a rule-list.</p>
+<!-- Add picture -->
+<p>Let’s create the “<strong>read_group</strong>”</p>
+<!-- Add picture -->
+<p>Then we setup one group-id ( 1 for example ) and we add the user “<strong>read_user</strong>” to that group</p>
+<!-- Add picture -->
+<p>After this, we can go back and create the rule-list “<strong>read_rule</strong>”</p>
+<!-- Add picture -->
+<p>On this rule, we will add the read_group in groups. This means that all the rules that we will setup here, will affect only the users that belong to this group.</p>
+<!-- Add picture -->
+<p>So, now we’ve 2 options, the cmdrule where list entries are examined for command authorization, and the rule where entries are examined for rpc, notification, and data authorization.</p>
+<p>Let’s add a rule to deny the sync-from</p>
+<!-- Add picture -->
+<p>In the rule we’ve to specify a path</p>
+<!-- Add picture -->
+<p>This path is nothing more than an XPATH. To see how we can get the xpaths, we go back to CLI and we execute the command “<code>show devices device | display xpath</code>”
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>ios-xr-2#<span class="w"> </span><span class="nb">exit</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>cisco@nso-613:~/NSO-TEST/nso-instance/packages/NTP/src$<span class="w"> </span>ncs_cli<span class="w"> </span>-Cu<span class="w"> </span>admin
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>User<span class="w"> </span>admin<span class="w"> </span>last<span class="w"> </span>logged<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">2022</span>-10-26T10:32:10.740451+00:00,<span class="w"> </span>to<span class="w"> </span>nso-613,<span class="w"> </span>from<span class="w"> </span><span class="m">198</span>.18.133.252<span class="w"> </span>using<span class="w"> </span>webui-http
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>admin<span class="w"> </span>connected<span class="w"> </span>from<span class="w"> </span><span class="m">198</span>.18.133.252<span class="w"> </span>using<span class="w"> </span>ssh<span class="w"> </span>on<span class="w"> </span>nso-613
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>admin@ncs#<span class="w"> </span>show<span class="w"> </span>devices<span class="w"> </span>device<span class="w"> </span><span class="p">|</span><span class="w"> </span>display<span class="w"> </span>xpath
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-cli-0&#39;</span><span class="o">]</span>/commit-queue/queue-length<span class="w"> </span><span class="m">0</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-cli-0&#39;</span><span class="o">]</span>/active-settings/connect-timeout<span class="w"> </span><span class="m">20</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-cli-0&#39;</span><span class="o">]</span>/active-settings/read-timeout<span class="w"> </span><span class="m">20</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-cli-0&#39;</span><span class="o">]</span>/active-settings/write-timeout<span class="w"> </span><span class="m">20</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-cli-0&#39;</span><span class="o">]</span>/active-settings/connect-timeout<span class="w"> </span><span class="m">20</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-cli-0&#39;</span><span class="o">]</span>/active-settings/read-timeout<span class="w"> </span><span class="m">20</span>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-cli-0&#39;</span><span class="o">]</span>/active-settings/write-timeout<span class="w"> </span><span class="m">20</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>&lt;…output<span class="w"> </span>omitted<span class="w"> </span><span class="k">for</span><span class="w"> </span>brevity…&gt;
+</span></code></pre></div></p>
+<p>This will show all devices path, if we want to see the paths for each device
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>admin@ncs#<span class="w"> </span>config
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>admin@ncs<span class="o">(</span>config<span class="o">)</span><span class="c1"># show full-configuration devices device ios-xr-1 | display xpath</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-xr-1&#39;</span><span class="o">]</span>/address<span class="w"> </span><span class="m">127</span>.0.0.1
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-xr-1&#39;</span><span class="o">]</span>/port<span class="w"> </span><span class="m">10023</span><span class="w">  </span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>&lt;…output<span class="w"> </span>omitted<span class="w"> </span><span class="k">for</span><span class="w"> </span>brevity…&gt;
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-xr-1&#39;</span><span class="o">]</span>/authgroup<span class="w"> </span>default
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-xr-1&#39;</span><span class="o">]</span>/device-type/cli/ned-id<span class="w"> </span>cisco-iosxr-cli-7.38
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-xr-1&#39;</span><span class="o">]</span>/state/admin-state<span class="w"> </span>unlocked
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-xr-1&#39;</span><span class="o">]</span>/config/cisco-ios-xr:domain/name<span class="w"> </span>cisco.com
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-xr-1&#39;</span><span class="o">]</span>/config/cisco-ios-xr:domain/name-server<span class="o">[</span><span class="nv">address</span><span class="o">=</span><span class="s1">&#39;2.2.2.2&#39;</span><span class="o">]</span>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-xr-1&#39;</span><span class="o">]</span>/config/cisco-ios-xr:ntp/peer<span class="o">[</span><span class="nv">address</span><span class="o">=</span><span class="s1">&#39;192.168.22.33&#39;</span><span class="o">]</span>
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-xr-1&#39;</span><span class="o">]</span>/config/cisco-ios-xr:ntp/server/server-list<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;172.16.22.44&#39;</span><span class="o">]</span>/minpoll<span class="w"> </span><span class="m">8</span>
+</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-xr-1&#39;</span><span class="o">]</span>/config/cisco-ios-xr:ntp/server/server-list<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;172.16.22.44&#39;</span><span class="o">]</span>/maxpoll<span class="w"> </span><span class="m">12</span>
+</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>/devices/device<span class="o">[</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ios-xr-1&#39;</span><span class="o">]</span>/config/cisco-ios-xr:vtp/mode<span class="w"> </span>off
+</span></code></pre></div></p>
+<p>For example, we can grab the path “<code>/devices/device[name='ios-xr-1']/config/cisco-ios-xr:domain</code>” and block all the operations with the exception of reading.</p>
+<p>We create the rule “<strong>deny-config-domain</strong>”</p>
+<!-- Add picture -->
+<p>And inside the rule on the data-node we use the path that we just got, we setup the action to deny and access operations we will deny “<code>create,update,delete,exec</code>”</p>
+<!-- Add picture -->
+<p>To see all the access-operations you can toggle the button near “<strong>view options</strong>” on the top right and then the info button will appear in each tile.</p>
+<!-- Add picture -->
+<p>After this, we commit.</p>
+<p>We logout from the admin user and we login into the <strong>read_user</strong>.</p>
+<p>Now we go to the Device Manager and we test our rules. We can check the “<code>ping</code>”, “<code>connect</code>”, “<code>check-sync</code>” and “<code>sync-from</code>” and we will see that the “<code>sync-from</code>” got denied.</p>
+<!-- Add picture -->
+<p>Now, if we go to the device <strong>ios-xr-1</strong> and we go into <em>config/domain</em> we will see that we’re only able to read the info</p>
+<!-- Add picture -->
+<p>And, if we try to add anything by clicking on the <strong>+</strong> button we will get the “<em>access denied</em>” notification.</p>
+<!-- Add picture -->
+<p>Since we’ve made the rule just for the <strong>ios-xr-1</strong> device, if we go to the other devices, for example <strong>ios-xr-0</strong> we see that we can still make changes in the domain configuration.</p>
+<!-- Add picture -->
+<p>To correct this, we need to login into the admin user, and change the <strong>PATH</strong> of this rule.</p>
+<p>So, instead of “<code>/devices/device[name='ios-xr-1']/config/cisco-ios-xr:domain/</code>”</p>
+<p>We will change to “<code>/devices/device/config/cisco-ios-xr:domain/</code>”</p>
+<p>Commit and go back to the <strong>read_user</strong>.</p>
+<p>We can see that after this change, we’re not able to make any change in domain configuration of all the managed devices with this user.</p>
+<!-- Add picture -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2025 <a href="https://cisco.com"  target="_blank" rel="noopener">Cisco Systems, Inc.</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.footer", "toc.follow", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.code.select"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
