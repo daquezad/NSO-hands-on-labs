@@ -32,7 +32,7 @@ jobs:
 
       - name: fix permission
         run: |
-          chmod a+x bin/8
+          chmod a+x bin
 
       # ✅ Build check (fails early if broken links/errors)
       - run: mkdocs build --strict
