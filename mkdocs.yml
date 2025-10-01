@@ -3,10 +3,10 @@ site_description: Lab Overview
 site_author: David Quezada & Jorge Mira
 nav:
   - Home: index.md
-  - Agenda: agenda.md
+  #- Agenda: agenda.md
   - Day 1: day1.md
-  - Day 2: day2.md
-  - Diagrams: diagram.md
+  ##- Day 2: day2.md
+  ##- Diagrams: diagram.md
 
   
 theme:
