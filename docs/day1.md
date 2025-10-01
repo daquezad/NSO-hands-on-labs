@@ -3,18 +3,22 @@
 
 Please click on the "**Win11**" option, and then select "**VM Console**" from the Remote Access.
 <!-- Add picture -->
-![](Pasted%20image%2020251001204206.png)
+![](<media/Pasted%20image%2020251001204206.png>)
 
 
 After selecting "**VM Console**", you will be redirected to the Windows operating system interface. If you see “You’re almost done setting up your PC,” then click “Remind me in 3 days.”
+
 <!-- Add picture -->
-![](Pasted%20image%2020251001204214.png)
+![](<media/Pasted%20image%2020251001204214.png>)
+
 Alternatively, you can choose an Ubuntu Desktop. Please click on the "`Ubuntu 24.04 Desktop`" and then select "**VM Console**" from the Remote Access.
-![](Pasted%20image%2020251001204223.png)
+
+![](<media/Pasted%20image%2020251001204223.png>)
+
 ## 1.1 Install NSO and NEDs
 - Click on Visual Studio Code shortcut and work on the Terminal window.
 <!-- Add picture -->
-![](Pasted%20image%2020251001204457.png)
+![](<media/Pasted%20image%2020251001204457.png>)
 ```bash
 cisco@xrd-host:~$ cd NSO-6.5-free/
 cisco@xrd-host:~/NSO-6.5-free$ ls *.bin
@@ -133,12 +137,16 @@ status: **started**
 To log in to NSO via the Web UI, open Firefox and access following URL: [http://198.18.134.27:8080/login.html](http://198.18.134.27:8080/login.html)
 
 You can log in using the default username and password, which are "admin" for both the username and password fields.
-![](Pasted%20image%2020251001204550.png)
+![](<media/Pasted%20image%2020251001204550.png>)
 
 After logging in, you will be directed to the main page, which displays the available applications and components provided by NSO.
-![](Pasted%20image%2020251001204557.png)
+
+![](<media/Pasted%20image%2020251001204557.png>)
+
 Please navigate to the "Config Editor" section.
-![](Pasted%20image%2020251001204604.png)
+
+![](<media/Pasted%20image%2020251001204604.png>)
+
 Since this is a fresh installation and we do not have any packages yet, let's proceed by adding the Network Element Drivers (NEDs).
 
 In the *"~/NSO-6.5-free"* folder, you should find some file starting with `ncs-` and they are NED packages.
@@ -171,11 +179,13 @@ cp ncs-6.5-cisco-iosxr-7.69.tar.gz ~/NSO-INSTALL/nso-instance/packages/
 ```
 
 Please return to the NSO Web UI, go to `ncs:packages` and select “Actions”, then click the "Reload" button for the packages.
-![](Pasted%20image%2020251001204649.png)
+![](<media/Pasted%20image%2020251001204649.png>)
 After executing the "Run reload action" button, you should now be able to see the "`cisco-ios-xr`" package in the list.
-![](Pasted%20image%2020251001204700.png)
+![](<media/Pasted%20image%2020251001204700.png>)
+
 Now that we have added our Network Element Driver (NED), let's navigate to the "**Devices**" section.
-![](Pasted%20image%2020251001204721.png)
+![](<media/Pasted%20image%2020251001204721.png>)
+
 Currently, there are no devices listed. However, we have two options to add them: manually by clicking on the **"+"** button, or programmatically using scripts or APIs.
 
 ## 1.2 – Registering XRd routers
@@ -200,11 +210,12 @@ cisco@xrd-host:~/NSO-6.5-free$ ncs_load -l -m devices.xml
 ```
 
 Go back to NSO and click on Devices and you see two XRd routers there.
-![](Pasted%20image%2020251001204735.png)
+![](<media/Pasted%20image%2020251001204735.png>)
 The first thing you need to do after a device to NSO is execute the “`sync-from`” so you update NSO CDB with the device configuration. Select all devices and make a `sync-from`
-![](Pasted%20image%2020251001204745.png)
+![](<media/Pasted%20image%2020251001204745.png>)
 
-![](Pasted%20image%2020251001204755.png)
+![](<media/Pasted%20image%2020251001204755.png>)
+
 !!! Note
 	If `sync-from` failed, please do “`fetch ssh host keys`” and try again.
 
@@ -213,7 +224,8 @@ The first thing you need to do after a device to NSO is execute the “`sync-fro
 You can enter in ios-xr-0 to verify interface configurations. To navigate in the configurations, you can use the Top bar (where I typed “confi” ) or scroll down and look for what you want to configure.
 
 <!-- Add picture -->
-![](Pasted%20image%2020251001204816.png)
+![](<media/Pasted%20image%2020251001204816.png>)
+
 You can follow the path and verify the `GigabitEthernet0/0/0/0` configuration
 
 **Full Path:** `/ncs:devices/device{xr-1}/config/cisco-ios-xr:interface/GigabitEthernet{0/0/0/0}/ipv4/address/`
