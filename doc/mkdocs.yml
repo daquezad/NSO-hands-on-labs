@@ -1,0 +1,60 @@
+site_name: NSO Hands-on Lab   .ı|ı.ı|ı.
+site_description: Lab Overview
+site_author: David Quezada & Jorge Mira
+nav:
+  - Home: index.md
+  - Agenda: agenda.md
+  - Day 1: day1.md
+  - Day 2: day2.md
+
+  
+theme:
+  name: material
+  logo: assets/logo.png
+  features:
+    - navigation.tabs
+    # - navigation.sections
+    - navigation.footer
+    - toc.follow
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - content.code.select
+
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: teal
+      accent: purple
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: teal
+      accent: lime
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+
+copyright: |
+  &copy; 2025 <a href="https://cisco.com"  target="_blank" rel="noopener">Cisco Systems, Inc.</a>
