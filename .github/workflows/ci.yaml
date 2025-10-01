@@ -39,5 +39,4 @@ jobs:
 
       # Make sure MkDocs disables Jekyll
       - run: touch doc/.nojekyll
-
-      - run: mkdocs gh-deploy --force -f doc/mkdocs.yml
+      - run: mkdocs gh-deploy --force
