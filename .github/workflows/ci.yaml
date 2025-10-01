@@ -38,5 +38,5 @@ jobs:
       - run: pip install mkdocs-material
 
       # Make sure MkDocs disables Jekyll
-      - run: touch doc/.nojekyll
+
       - run: mkdocs gh-deploy --force
