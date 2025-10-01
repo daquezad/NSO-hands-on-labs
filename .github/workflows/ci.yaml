@@ -1,23 +1,25 @@
-name: docs 
-
+name: docs
 
 on:
   push:
     branches:
       - main
       - master
+
 permissions:
   contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
 
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
 
       - uses: actions/cache@v3
         with:
@@ -25,5 +27,13 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material 
+
+      - run: pip install mkdocs-material
+
+      # ✅ Build check (fails early if broken links/errors)
+      - run: mkdocs build --strict
+
+      # ✅ Ensure Jekyll is disabled
+      - run: touch site/.nojekyll
+
       - run: mkdocs gh-deploy --force
