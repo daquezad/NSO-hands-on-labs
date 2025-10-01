@@ -3,6 +3,7 @@
 
 Please click on the "**Win11**" option, and then select "**VM Console**" from the Remote Access.
 <!-- Add picture -->
+![](media/logo.png)
 
 After selecting "**VM Console**", you will be redirected to the Windows operating system interface. If you see “You’re almost done setting up your PC,” then click “Remind me in 3 days.”
 <!-- Add picture -->
