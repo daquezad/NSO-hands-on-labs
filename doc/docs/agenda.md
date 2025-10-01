@@ -15,8 +15,7 @@
 *   1.8 - Create Role Based and Resource Based Access Control rules
 *   -->
 
-[Cisco Network Services Orchestrator
-[3](#cisco-network-services-orchestrator)](#cisco-network-services-orchestrator)
+
 
 [1 - Connect to the Workstation
 [3](#connect-to-the-workstation)](#connect-to-the-workstation)
